@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact & Wholesale Enquiry | SRK Fruits India</title><meta name="description" content="SRK Fruits India Private Limited — premium imported and domestic fruit importer and wholesale distributor from Koyambedu, Chennai."><link rel="stylesheet" href="css.css"></head><body>
+<header class="header" id="header">
+ <div class="container nav">
+  <a class="logo" href="index.html"><img src="assets/srk_logo.png" alt="SRK Fruits India logo"><div><strong>SRK Fruits</strong><span>Global Fruits · Local Trust</span></div></a>
+  <button class="menu" id="menu" aria-label="Open menu">MENU</button>
+  <nav class="links" id="links">
+   <a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products</a><a href="quality.html">Quality</a><a href="catalogue.html">Catalogue</a><a href="contact.html" class="nav-cta">Wholesale Enquiry</a>
+  </nav>
+ </div>
+</header>
+<main>
+<section class="page-hero"><div class="container"><p class="eyebrow">Contact SRK Fruits</p><h1>Let's talk supply.</h1><p class="lead">For wholesale, retail, distribution or bulk requirements, send the details below. You can also reach us directly on WhatsApp or phone.</p></div></section>
+<section class="section" id="bulk"><div class="container contact-grid">
+<div><p class="eyebrow">Direct contact</p><h2>Choose the easiest way.</h2><div class="contact-list">
+<div class="contact-item"><b>Phone</b><a href="tel:+918438742508">+91 84387 42508</a><p class="small">Call for urgent availability or order discussions.</p></div>
+<div class="contact-item"><b>WhatsApp</b><a href="https://wa.me/918438742508?text=Hello%20SRK%20Fruits%2C%20I%20would%20like%20to%20make%20a%20wholesale%20enquiry." target="_blank" rel="noopener">Start a WhatsApp enquiry →</a><p class="small">Send fruit, quantity and destination for a faster enquiry.</p></div>
+<div class="contact-item"><b>Email</b><a href="mailto:srkfreshfruits@gmail.com">srkfreshfruits@gmail.com</a><p class="small">For quotations, business discussions and documents.</p></div>
+<div class="contact-item"><b>Address</b>Shop No. TD 32, Anna Fruit Market, Koyambedu, Chennai – 600017, Tamil Nadu</div>
+</div></div>
+<form class="form" id="enquiryForm"><p class="eyebrow">Wholesale enquiry</p><h2 style="font-size:2rem">Tell us what you need.</h2>
+<div class="form-row"><div class="field"><label>Name / Company</label><input name="name" required></div><div class="field"><label>Phone / WhatsApp</label><input name="phone" required></div></div>
+<div class="form-row"><div class="field"><label>Fruit / Product</label><input name="product" id="product"></div><div class="field"><label>Quantity</label><input name="quantity" placeholder="e.g. 100 boxes / 500 kg"></div></div>
+<div class="form-row"><div class="field"><label>Destination</label><input name="destination" placeholder="City, State"></div><div class="field"><label>Required date</label><input name="date" type="date"></div></div>
+<div class="field"><label>Requirement</label><textarea name="message" rows="5" placeholder="Mention grade, variety, pack size or any other requirement."></textarea></div>
+<button class="btn btn-dark" type="submit">Send Enquiry via WhatsApp</button><p class="small muted" style="margin-top:12px">This static website opens WhatsApp with your enquiry details; no backend database is required.</p>
+</form></div></section>
+<section class="section alt" id="location"><div class="container"><div class="section-head"><div><p class="eyebrow">Visit us</p><h2>Koyambedu, Chennai</h2><p class="lead">Use the map for directions to Anna Fruit Market. Add the exact shop pin once the final Google Maps listing is confirmed.</p></div><a class="btn btn-dark" href="https://www.google.com/maps?q=Shop+No.+TD+32,+Anna+Fruit+Market,+Koyambedu,+Chennai+600017" target="_blank" rel="noopener">Open in Google Maps</a></div><iframe class="map" loading="lazy" src="https://www.google.com/maps?q=Shop+No.+TD+32,+Anna+Fruit+Market,+Koyambedu,+Chennai+600017&output=embed" title="SRK Fruits location map"></iframe></div></section>
+<script>
+const params=new URLSearchParams(location.search); if(params.get('product')) document.getElementById('product').value=params.get('product');
+document.getElementById('enquiryForm').addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.target);const msg=`Hello SRK Fruits, I would like to make a wholesale enquiry.%0A%0AName/Company: ${d.get('name')}%0APhone: ${d.get('phone')}%0AProduct: ${d.get('product')}%0AQuantity: ${d.get('quantity')}%0ADestination: ${d.get('destination')}%0ARequired date: ${d.get('date')}%0ARequirement: ${d.get('message')}`;window.open('https://wa.me/918438742508?text='+msg,'_blank')});
+</script>
+</main>
+<footer class="footer">
+ <div class="container">
+  <div class="footer-grid">
+   <div><a class="logo" href="index.html"><img src="assets/srk_logo.png" alt="SRK Fruits logo"><div><strong>SRK Fruits</strong><span>Global Fruits · Local Trust</span></div></a><p style="margin-top:16px">Premium imported and domestic fruits, sourced, graded and distributed from Koyambedu, Chennai to customers across India.</p><div class="social"><a href="https://www.linkedin.com/company/srk-fruits/" target="_blank" rel="noopener">in</a><a href="https://www.instagram.com/srkfreshfruits/" target="_blank" rel="noopener">ig</a></div></div>
+   <div><h4>Explore</h4><ul><li><a href="about.html">Our Journey</a></li><li><a href="products.html">Imported Fruits</a></li><li><a href="products.html#domestic">Domestic & Seasonal</a></li><li><a href="quality.html">Quality Standards</a></li><li><a href="catalogue.html">Product Catalogue</a></li></ul></div>
+   <div><h4>Business</h4><ul><li><a href="contact.html">Wholesale Enquiry</a></li><li><a href="contact.html#bulk">Bulk Orders</a></li><li><a href="contact.html#location">Visit Koyambedu</a></li><li><a href="https://www.google.com/maps?q=Shop+No.+TD+32,+Anna+Fruit+Market,+Koyambedu,+Chennai+600017" target="_blank" rel="noopener">Google Maps</a></li></ul></div>
+   <div><h4>Contact</h4><ul><li>Shop No. TD 32, Anna Fruit Market,<br>Koyambedu, Chennai – 600017</li><li><a href="tel:+918438742508">+91 84387 42508</a></li><li><a href="mailto:srkfreshfruits@gmail.com">srkfreshfruits@gmail.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> SRK Fruits India Private Limited. All rights reserved.</span><span><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms & Conditions</a></span></div>
+ </div>
+</footer>
+<div class="float-actions"><a class="float wa" href="https://wa.me/918438742508?text=Hello%20SRK%20Fruits%2C%20I%20would%20like%20to%20make%20a%20wholesale%20enquiry." target="_blank" rel="noopener" aria-label="WhatsApp">WA</a><a class="float call" href="tel:+918438742508" aria-label="Call">CALL</a></div>
+
+<script>
+const header=document.getElementById('header'); const menu=document.getElementById('menu'); const links=document.getElementById('links');
+window.addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>20),{passive:true});
+menu?.addEventListener('click',()=>links.classList.toggle('open'));
+document.querySelectorAll('.reveal').forEach(el=>{const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');o.unobserve(e.target)}}),{threshold:.12});o.observe(el)});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body></html>
