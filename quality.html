@@ -1,4 +1,28 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quality & Handling | SRK Fruits India</title><meta name="description" content="SRK Fruits India Private Limited — premium imported and domestic fruit importer and wholesale distributor from Koyambedu, Chennai."><link rel="stylesheet" href="css.css"></head><body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quality & Handling | SRK Fruits India</title><meta name="description" content="SRK Fruits India Private Limited — premium imported and domestic fruit importer and wholesale distributor from Koyambedu, Chennai."><link rel="stylesheet" href="css.css"></head>
+<body>
+    <!-- Quality Page Opening Animation -->
+<div class="quality-opening" id="qualityOpening">
+
+    <div class="quality-opening-bg"></div>
+
+    <div class="quality-opening-content">
+        <div class="quality-seal">
+            <div class="seal-ring">
+                <div class="seal-inner">
+                    <span class="seal-check">✓</span>
+                </div>
+            </div>
+        </div>
+
+        <h1>SRK FRUITS</h1>
+        <p>QUALITY · FRESHNESS</p>
+
+        <div class="quality-loading">
+            <span></span>
+        </div>
+    </div>
+
+</div>
 <header class="header" id="header">
  <div class="container nav">
   <a class="logo" href="index.html"><img src="assets/srk_logo.png" alt="SRK Fruits India logo"><div><strong>SRK Fruits</strong><span>Global Fruits · Local Trust</span></div></a>
@@ -33,5 +57,21 @@ window.addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>
 menu?.addEventListener('click',()=>links.classList.toggle('open'));
 document.querySelectorAll('.reveal').forEach(el=>{const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');o.unobserve(e.target)}}),{threshold:.12});o.observe(el)});
 document.getElementById('year').textContent=new Date().getFullYear();
+
+
+// Quality page opening animation
+window.addEventListener('load', function () {
+    const opening = document.getElementById('qualityOpening');
+
+    if (!opening) return;
+
+    setTimeout(() => {
+        opening.classList.add('open');
+    }, 1800);
+
+    setTimeout(() => {
+        opening.classList.add('finished');
+    }, 2800);
+});
 </script>
 </body></html>

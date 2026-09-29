@@ -348,3 +348,452 @@ h1{font-size:clamp(2.45rem,5vw,4.35rem);letter-spacing:-.035em}h2{font-size:clam
         transition-duration: 0.1s;
     }
 }
+
+/* ===== PRODUCTS PAGE OPENING ANIMATION ===== */
+
+.products-opening {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.products-panel {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #10412f;
+    transition: transform 1.5s cubic-bezier(.77, 0, .18, 1);
+}
+
+.products-panel-left {
+    left: 0;
+}
+
+.products-panel-right {
+    right: 0;
+}
+
+.products-opening-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #f5e8bd;
+    width: 100%;
+    transition: opacity .5s ease, transform .8s ease;
+}
+
+.products-opening-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 60px);
+    letter-spacing: 8px;
+    margin: 20px 0 12px;
+}
+
+.products-opening-content p {
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.fruit-orbit {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 35px;
+}
+
+.fruit-orbit span {
+    display: inline-block;
+    animation: fruitFloat 1.2s ease-in-out infinite alternate;
+}
+
+.fruit-orbit span:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.fruit-orbit span:nth-child(3) {
+    animation-delay: .4s;
+}
+
+@keyframes fruitFloat {
+    from {
+        transform: translateY(0) rotate(-10deg);
+    }
+
+    to {
+        transform: translateY(-15px) rotate(10deg);
+    }
+}
+
+/* Panels open outward */
+
+.products-opening.open .products-panel-left {
+    transform: translateX(-100%);
+}
+
+.products-opening.open .products-panel-right {
+    transform: translateX(100%);
+}
+
+.products-opening.open .products-opening-content {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+}
+
+.products-opening.finished {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .products-panel {
+        transition-duration: .1s;
+    }
+
+    .fruit-orbit span {
+        animation: none;
+    }
+}
+
+/* ===== QUALITY PAGE OPENING ===== */
+
+.quality-opening {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #10412f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.quality-opening-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        #1c5b40 0%,
+        #10412f 60%,
+        #082b1e 100%
+    );
+    transform: scale(1);
+    transition: transform 1.5s ease, opacity 1s ease;
+}
+
+.quality-opening-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #f5e8bd;
+    transition: opacity .6s ease, transform .8s ease;
+}
+
+/* Golden quality seal */
+
+.quality-seal {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.seal-ring {
+    width: 115px;
+    height: 115px;
+    border: 2px solid #d9b96e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: sealRotate 3s linear infinite;
+}
+
+.seal-ring::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px dashed #d9b96e;
+    border-radius: 50%;
+}
+
+.seal-inner {
+    width: 75px;
+    height: 75px;
+    background: #d9b96e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: sealCounterRotate 3s linear infinite;
+}
+
+.seal-check {
+    color: #10412f;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.quality-opening-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 55px);
+    letter-spacing: 7px;
+    margin: 0 0 14px;
+}
+
+.quality-opening-content p {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+/* Loading line */
+
+.quality-loading {
+    width: 150px;
+    height: 2px;
+    background: rgba(217, 185, 110, .2);
+    margin: 30px auto 0;
+    overflow: hidden;
+}
+
+.quality-loading span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: #d9b96e;
+    animation: qualityProgress 1.5s ease forwards;
+}
+
+@keyframes sealRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sealCounterRotate {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes qualityProgress {
+    to {
+        width: 100%;
+    }
+}
+
+/* Reveal the quality page */
+
+.quality-opening.open .quality-opening-bg {
+    transform: scale(1.5);
+    opacity: 0;
+}
+
+.quality-opening.open .quality-opening-content {
+    opacity: 0;
+    transform: scale(.7);
+}
+
+.quality-opening.finished {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .seal-ring,
+    .seal-inner,
+    .quality-loading span {
+        animation: none;
+    }
+
+    .quality-opening-bg,
+    .quality-opening-content {
+        transition-duration: .1s;
+    }
+}
+
+/* ===== CATALOGUE PAGE OPENING ===== */
+
+.catalogue-opening {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #10412f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.catalogue-curtain {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        #1c5b40,
+        #10412f 65%,
+        #082b1e
+    );
+    clip-path: circle(150% at 50% 50%);
+    transition: clip-path 1.5s cubic-bezier(.77, 0, .18, 1);
+}
+
+.catalogue-opening-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #f5e8bd;
+    transition: opacity .6s ease, transform .8s ease;
+}
+
+/* Globe animation */
+
+.catalogue-globe {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.globe-ring {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border: 2px solid #d9b96e;
+    border-radius: 50%;
+}
+
+.globe-ring-one {
+    animation: catalogueGlobeRotate 4s linear infinite;
+}
+
+.globe-ring-two {
+    width: 85px;
+    height: 125px;
+    border-style: dashed;
+    animation: catalogueGlobeRotate 6s linear infinite reverse;
+}
+
+.globe-fruits {
+    font-size: 45px;
+    position: relative;
+    z-index: 2;
+    animation: catalogueFruitPulse 1.5s ease-in-out infinite alternate;
+}
+
+.globe-fruit {
+    position: absolute;
+    font-size: 23px;
+}
+
+.fruit-one {
+    top: 0;
+    right: 5px;
+}
+
+.fruit-two {
+    bottom: 5px;
+    left: 5px;
+}
+
+.fruit-three {
+    bottom: 0;
+    right: 0;
+}
+
+/* Branding */
+
+.catalogue-opening-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 55px);
+    letter-spacing: 8px;
+    margin: 0 0 14px;
+}
+
+.catalogue-opening-content p {
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+/* Loading bar */
+
+.catalogue-loading {
+    width: 160px;
+    height: 2px;
+    margin: 30px auto 0;
+    background: rgba(217, 185, 110, .2);
+    overflow: hidden;
+}
+
+.catalogue-loading span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: #d9b96e;
+    animation: catalogueProgress 1.6s ease forwards;
+}
+
+/* Animation keyframes */
+
+@keyframes catalogueGlobeRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes catalogueFruitPulse {
+    from {
+        transform: scale(.9);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes catalogueProgress {
+    to {
+        width: 100%;
+    }
+}
+
+/* Reveal catalogue */
+
+.catalogue-opening.open .catalogue-curtain {
+    clip-path: circle(0% at 50% 50%);
+}
+
+.catalogue-opening.open .catalogue-opening-content {
+    opacity: 0;
+    transform: scale(.8);
+}
+
+.catalogue-opening.finished {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .globe-ring,
+    .globe-fruits,
+    .catalogue-loading span {
+        animation: none;
+    }
+
+    .catalogue-curtain,
+    .catalogue-opening-content {
+        transition-duration: .1s;
+    }
+}
